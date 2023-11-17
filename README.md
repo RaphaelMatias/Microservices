@@ -31,4 +31,4 @@ O objetivo deste projeto é fornecer um exemplo básico de implementação de mi
 Sinta-se à vontade para contribuir para este estudo abrindo pull requests, reportando problemas ou sugerindo melhorias.
 
 Autor
-`RaphaelMatias`
+[Raphael Matias](https://github.com/RaphaelMatias)
