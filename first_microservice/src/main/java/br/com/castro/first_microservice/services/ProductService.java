@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.castro.first_microservice.model.Product;
-import br.com.castro.first_microservice.repository.ProductRepository;
+import br.com.castro.first_microservice.repository.ProductRepository_old;
 
 @Service
 public class ProductService {
     
     @Autowired
-    private ProductRepository productRepository;
+    private ProductRepository_old productRepository;
 
     public List<Product> getAll() {
         return productRepository.getAll();
