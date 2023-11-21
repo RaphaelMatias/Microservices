@@ -3,7 +3,7 @@ package br.com.castro.first_microservice.model;
 public class Product {
 
     //#region attributes
-    private Integer Id;
+    private Integer id;
 
     private String name;
 
@@ -17,11 +17,11 @@ public class Product {
 
     //#region Getters and Setters
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getName() {
