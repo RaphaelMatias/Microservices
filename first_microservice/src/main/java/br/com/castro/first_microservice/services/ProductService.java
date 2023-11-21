@@ -7,34 +7,35 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.castro.first_microservice.model.Product;
+import br.com.castro.first_microservice.repository.ProductRepository;
 import br.com.castro.first_microservice.repository.ProductRepository_old;
 
 @Service
 public class ProductService {
     
     @Autowired
-    private ProductRepository_old productRepository;
+    private ProductRepository productRepository;
 
     public List<Product> getAll() {
-        return productRepository.getAll();
+        return productRepository.findAll();
     }
 
     public Optional<Product> getById(Integer id) {
-        return productRepository.getById(id);
+        return productRepository.findById(id);
     }
 
     public Product addProduct(Product product) {
-        return productRepository.addProduct(product);
+        return productRepository.save(product);
     }
 
     public void deleteProduct(Integer id) {
-        productRepository.deleteProduct(id);
+        productRepository.deleteById(id);
     }
 
     public Product updateProduct(Integer id, Product product) {
     
         product.setId(id);
 
-        return productRepository.updateProduct(product);
+        return productRepository.save(product);
     }
 }
