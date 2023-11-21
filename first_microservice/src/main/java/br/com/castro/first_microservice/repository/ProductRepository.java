@@ -16,15 +16,15 @@ public class ProductRepository{
 
     private Integer lastID = 0;
 
-    public List<Product> obtainAll() {
+    public List<Product> getAll() {
         return products;
     }
 
-    public Optional<Product> obtainByID(Integer id) {
+    public Optional<Product> getById(Integer id) {
         return products.stream().filter(product -> product.getId() == id).findFirst();
     }
 
-    public Product createProduct(Product product) {
+    public Product addProduct(Product product) {
         lastID++;
         product.setId(lastID);
         products.add(product);
@@ -38,7 +38,7 @@ public class ProductRepository{
 
     public Product updateProduct(Product product) {
 
-        Optional<Product> productFound = obtainByID(product.getId());
+        Optional<Product> productFound = getById(product.getId());
 
         if (productFound.isEmpty()) {
             throw new InputMismatchException("Produto não encontrado");
